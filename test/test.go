@@ -30,6 +30,14 @@ func Hash(str string) int {
 	return h ^ int(uint(h) >> 16)
 }
 
+func HashIndex(str string, length int) int {
+	return (length - 1) & Hash(str)
+}
+
+func IndexStr(index int) string {
+	return fmt.Sprintf("%08d", index)
+}
+
 func Test() {
 	fmt.Printf("1234")
 }
